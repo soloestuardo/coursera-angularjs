@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myFirstApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First AngularJS App</title>
+</head>
+<body>
+    <div ng-controller="myFirstController">
+        <input type="text" ng-model="name">
+        <p>Adentro del INPUT dice: {{name}}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" ng-app='imgApp'>
+  <head>
+    <meta charset="UTF-8">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions and Interpolation</title>
+  </head>
+  <body>
+    <h1>¡Vamos a jugar ajedrez!</h1>
+    <div ng-controller="imgChangeController">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quam provident in cumque corporis sint. Ex, quisquam, voluptate mollitia consequatur voluptas iure, doloribus numquam autem esse fugit ratione eum neque.</p>
+      <div>
+        <button ng-click="benjiPlays()">{{currentMove}}</button>
+        <br>
+        <img ng-src="images/benji_{{stateOfBeing}}.jpeg">
+      </div>
+    </div>
+  </body>
+</html>

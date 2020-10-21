@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="lunchCheck">
+<html lang="es" ng-app="lunchCheck"> <!--Here we have the app-->
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
   <script src="angular.js"></script>
   <script src="app.js"></script>
   </head>
 <body>
    <div class="container">
      <h1>Lunch Checker</h1>
-        <div ng-controller="lunchCheckController">
+        <div ng-controller="lunchCheckController"> <!--Here we have the controller-->
             <div class="form-group">
-                <input ng-model="lunchMenu" ng-class="inputBorder" type="text" placeholder="List comma separated the dishes you usually have for lunch" class="form-control">
+                <input ng-model="lunchMenu" ng-class="inputBorder" type="text" placeholder="List comma separated the dishes you usually have for lunch" class="form-control"> <!--In this input we have the 'ng-model' and the 'ng-class', which is the one that helps us to change the class-->
             </div>
             <div class="form-group">
-                <button ng-click="letsCriticize()" class="btn btn-outline-dark">Check If Too Much</button>
+                <button ng-click="letsCriticize()" class="btn btn-outline-dark">Check If Too Much</button> <!--We use 'ng-click' to use a function when clicked-->
             </div>
             <div class="form-group message">
-              <p ng-class="fontColor">{{howMuch}}</p>
+              <p ng-class="fontColor">{{howMuch}}</p> <!--Here we also use the 'ng-class' to toggle classes depending on the outcome-->
             </div>
         </div>  
    </div>

@@ -3,26 +3,27 @@
     
     angular.module('lunchCheck', [])
     .controller('lunchCheckController', lunchCheckController);
-    lunchCheckController.$inject=['$scope']; //* -- To protecto our code from minification
+    lunchCheckController.$inject=['$scope']; //* -- To protect our code from minification
     function lunchCheckController($scope) {
         $scope.lunchMenu ="";
+
         //*----------Here's the function that our button calls
         $scope.letsCriticize = function () {
             
-            //*----------If the input is blank or just spaces, it will display an alert. I used a regular expression here.
+            //*----------This 'if' verifies that the 'input' isn't empty. I used a regular expression here.
             if (/^\s*$/.test($scope.lunchMenu)==true) {
                 $scope.howMuch = "Please enter data first";
                 $scope.fontColor = "text-danger";
                 $scope.inputBorder = "border-danger";
             }
             else {
-                countTheAmount();
+                //--------If the test is successful it will split the items inside and send that array to be counted in the function
+                let thisPersonMenu = $scope.lunchMenu.split(',');
+                countTheAmount(thisPersonMenu);
             }
 
-            //TODO Usar '.filter()' para eliminar los datos en blanco del array
-
-            function countTheAmount() {
-                const thisPersonMenu = $scope.lunchMenu.split(',');
+            //------------This function counts the amount of items in the array provided and depending on the result changes our '$scope' values
+            function countTheAmount(thisPersonMenu) {
                 if (thisPersonMenu.length <= 3) {
                     $scope.howMuch ="Enjoy!";
                     $scope.fontColor = "text-success";

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="shoppingListCheckOff">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <title>Shopping List Check Off</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping List Check Off</h1>
+      
+        <div class="row">
+      
+          <!-- To Buy List -->
+          <div ng-controller="toBuyController as toBuy" class="col-md-6">
+           <h2>Por comprar:</h2>
+           <ul>
+            <li ng-repeat="item in toBuy.items">
+                Necesitas {{item.quantity}} de {{item.name}}
+                <button ng-click="toBuy.bought($index)" class="btn btn-outline-success mt-1">Comprado</button>
+            </li>
+           </ul>
+           <div ng-if="toBuy.checkList" class="text-success">¡Ya lo compraste todo!</div>
+           <p>{{toBuy.checkList}}</p>
+          </div>
+      
+          <!-- Already Bought List -->
+          <div ng-controller="alreadyBoughtController as justBought" class="col-md-6">
+           <h2>Comprado:</h2>
+           <ul>
+            <li ng-repeat="item in justBought.items">
+                Ya tienes {{item.quantity}} de {{item.name}}
+            </li>
+           </ul>
+           <div ng-if="justBought.checkList" class="text-danger">Aún no has comprado nada.</div>
+           <p>{{justBought.checkList}}</p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
